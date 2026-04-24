@@ -19,7 +19,6 @@ body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
     background: #f4f7fb;
-    color: #222;
 }
 
 /* ===== HERO ===== */
@@ -45,28 +44,11 @@ body {
     position: relative;
     z-index: 2;
     color: white;
-    animation: fadeUp 1s ease;
-}
-
-@keyframes fadeUp {
-    from {opacity:0; transform:translateY(30px);}
-    to {opacity:1; transform:translateY(0);}
 }
 
 /* LOGO */
 .logo {
     width: 110px;
-    margin-bottom: 10px;
-}
-
-/* TEXT */
-h1 {
-    margin: 10px 0;
-    color: #00d4ff;
-}
-
-.tagline {
-    color: #ddd;
 }
 
 /* BUTTON */
@@ -79,12 +61,8 @@ h1 {
     color:white;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,198,255,0.4);
 }
-
-.btn:hover {
-    transform:scale(1.08);
-}
+.btn:hover { transform:scale(1.08); }
 
 /* SECTION */
 .section {
@@ -95,52 +73,77 @@ h1 {
 
 /* CARD */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 20px;
     margin-top: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-/* TITLE */
-h2 {
-    color: #0072ff;
-}
-
-/* SERVICES GRID */
+/* SERVICES */
 .services {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
 }
-
 .service-box {
-    background: linear-gradient(135deg, #e6f7ff, #cceeff);
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 14px;
+    background:#eaf6ff;
+    padding:12px;
+    border-radius:10px;
 }
 
-/* STATS */
+/* ===== AUTO SLIDER ===== */
+.slider {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideShow 12s infinite;
+}
+.slide:nth-child(1){animation-delay:0s;}
+.slide:nth-child(2){animation-delay:4s;}
+.slide:nth-child(3){animation-delay:8s;}
+
+@keyframes slideShow {
+    0%{opacity:0;}
+    10%{opacity:1;}
+    30%{opacity:1;}
+    40%{opacity:0;}
+    100%{opacity:0;}
+}
+
+/* ===== STATS ===== */
 .stats {
     display:flex;
     justify-content:space-around;
     text-align:center;
 }
 .stat h3 {
-    color:#00c6ff;
+    color:#0072ff;
 }
 
-/* SLIDER */
-.slider {
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
+/* ===== FLOATING BUTTONS ===== */
+.float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
 }
-.slider img {
-    width:100%;
-    border-radius:12px;
+.float a {
+    display:block;
+    margin-top:10px;
+    padding:12px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    text-align:center;
+    text-decoration:none;
+    font-size:20px;
 }
 
 /* FOOTER */
@@ -158,16 +161,13 @@ h2 {
 <!-- HERO -->
 <div class="hero">
 <div class="hero-content">
-
 <img src="logo.png" class="logo">
-
 <h1>Azad Prime Medico</h1>
-<p><b>Dr Anand Sathi</b></p>
-<p class="tagline">Ranchi Specialty Clinic</p>
+<p>Dr Anand Sathi</p>
+<p>Ranchi Specialty Clinic</p>
 
-<a class="btn" href="tel:+917633801161">📞 Call Now</a>
+<a class="btn" href="tel:+917633801161">📞 Call</a>
 <a class="btn" href="https://wa.me/917633801161">💬 WhatsApp</a>
-
 </div>
 </div>
 
@@ -175,88 +175,79 @@ h2 {
 
 <!-- ABOUT -->
 <div class="card">
-<h2>👨‍⚕️ About Clinic</h2>
-<p>
-Azad Prime Medico is a modern healthcare clinic in Ranchi offering
-advanced OPD consultation, pharmacy, and diagnostic services
-with a focus on quality care and patient satisfaction.
-</p>
+<h2>About</h2>
+<p>Modern clinic offering OPD, pharmacy & diagnostics with trusted care.</p>
 </div>
 
 <!-- SERVICES -->
 <div class="card">
-<h2>🩺 Our Services</h2>
-
+<h2>Services</h2>
 <div class="services">
-<div class="service-box">OPD Consultation</div>
+<div class="service-box">OPD</div>
 <div class="service-box">Pharmacy</div>
 <div class="service-box">CT Scan</div>
 <div class="service-box">MRI</div>
 <div class="service-box">Ultrasound</div>
-<div class="service-box">Diagnostic Tests</div>
+<div class="service-box">Diagnostics</div>
 </div>
-
-</div>
-
-<!-- DOCTOR -->
-<div class="card">
-<h2>👨‍⚕️ Doctor</h2>
-<p><b>Dr Anand Sathi</b></p>
-<p>Experienced Medical Professional</p>
-<p>Specialized in Patient Care & Diagnostics</p>
 </div>
 
 <!-- APPOINTMENT -->
 <div class="card" style="text-align:center;">
-<h2>📅 Book Appointment</h2>
-<a class="btn" href="https://wa.me/917633801161?text=I want to book appointment">Book Now</a>
+<h2>Book Appointment</h2>
+<a class="btn" href="https://wa.me/917633801161?text=Appointment">Book Now</a>
 </div>
 
 <!-- STATS -->
 <div class="card">
-<h2>📊 Our Impact</h2>
+<h2>Our Impact</h2>
 <div class="stats">
-<div class="stat"><h3>5000+</h3><p>Patients</p></div>
-<div class="stat"><h3>10+</h3><p>Years</p></div>
-<div class="stat"><h3>100%</h3><p>Trusted</p></div>
+<div class="stat"><h3 id="p1">0</h3><p>Patients</p></div>
+<div class="stat"><h3 id="p2">0</h3><p>Years</p></div>
+<div class="stat"><h3 id="p3">0</h3><p>Trust</p></div>
 </div>
-</div>
-
-<!-- TESTIMONIALS -->
-<div class="card">
-<h2>⭐ Testimonials</h2>
-<p>“Very good treatment and fast service”</p>
-<p>“Best clinic in Ranchi for diagnostics”</p>
-<p>“Doctor listens carefully and gives proper advice”</p>
 </div>
 
 <!-- SLIDER -->
 <div class="card">
-<h2>🏥 Clinic Gallery</h2>
+<h2>Gallery</h2>
 <div class="slider">
-<img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800">
-<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800">
-<img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?w=800">
+<img class="slide" src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800">
+<img class="slide" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800">
+<img class="slide" src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?w=800">
 </div>
 </div>
 
-<!-- CONTACT -->
-<div class="card">
-<h2>📍 Contact</h2>
-
-<p>📞 7633801161</p>
-<p>📧 anand@azadprimemedico.com</p>
-
-<a class="btn" href="https://maps.google.com/?q=Ranchi" target="_blank">📍 View Location</a>
-<a class="btn" href="contact.vcf" download>📥 Save Contact</a>
-
 </div>
 
+<!-- FLOAT BUTTON -->
+<div class="float">
+<a href="https://wa.me/917633801161">💬</a>
+<a href="tel:+917633801161" style="background:#0072ff;">📞</a>
 </div>
 
 <div class="footer">
 Powered by TeraSyncTech 🚀
 </div>
+
+<script>
+
+/* COUNTER */
+function animate(id, end) {
+let i = 0;
+let el = document.getElementById(id);
+let interval = setInterval(()=>{
+i += Math.ceil(end/50);
+if(i>=end){i=end; clearInterval(interval);}
+el.innerText = i + "+";
+},30);
+}
+
+animate("p1",5000);
+animate("p2",10);
+animate("p3",100);
+
+</script>
 
 </body>
 </html>
