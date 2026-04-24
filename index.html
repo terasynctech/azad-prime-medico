@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Azad Prime Medico | Dr Anand Sathi</title>
+
+<!-- SOCIAL PREVIEW -->
+<meta property="og:title" content="Azad Prime Medico | Ranchi Specialty Clinic">
+<meta property="og:description" content="Advanced OPD, Pharmacy & Diagnostic Services in Ranchi">
+<meta property="og:image" content="logo.png">
+
+<link rel="icon" href="logo.png">
+
+<style>
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1580281657527-47e33f7c5c3c') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* LOGO */
+.logo {
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+h1 {
+    margin: 10px 0;
+    color: #00d4ff;
+}
+
+.tagline {
+    color: #ddd;
+}
+
+/* BUTTON */
+.btn {
+    display:inline-block;
+    margin:10px;
+    padding:12px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,198,255,0.4);
+}
+
+.btn:hover {
+    transform:scale(1.08);
+}
+
+/* SECTION */
+.section {
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+h2 {
+    color: #0072ff;
+}
+
+/* SERVICES GRID */
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.service-box {
+    background: linear-gradient(135deg, #e6f7ff, #cceeff);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* FOOTER */
+.footer {
+    text-align:center;
+    padding:20px;
+    color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-content">
+
+<img src="logo.png" class="logo">
+
+<h1>Azad Prime Medico</h1>
+<p><b>Dr Anand Sathi</b></p>
+<p class="tagline">Ranchi Specialty Clinic</p>
+
+<a class="btn" href="tel:+917633801161">📞 Call Now</a>
+<a class="btn" href="https://wa.me/917633801161">💬 WhatsApp</a>
+
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<div class="card">
+<h2>👨‍⚕️ About Clinic</h2>
+<p>
+Azad Prime Medico is a modern healthcare clinic in Ranchi offering
+advanced OPD consultation, pharmacy, and diagnostic services
+with a focus on quality care and patient satisfaction.
+</p>
+</div>
+
+<!-- SERVICES -->
+<div class="card">
+<h2>🩺 Our Services</h2>
+
+<div class="services">
+<div class="service-box">OPD Consultation</div>
+<div class="service-box">Pharmacy</div>
+<div class="service-box">CT Scan</div>
+<div class="service-box">MRI</div>
+<div class="service-box">Ultrasound</div>
+<div class="service-box">Diagnostic Tests</div>
+</div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+<h2>📍 Contact</h2>
+
+<p>📞 7633801161</p>
+<p>📧 anand@azadprimemedico.com</p>
+
+<a class="btn" href="https://maps.google.com/?q=Ranchi" target="_blank">📍 View Location</a>
+
+<a class="btn" href="contact.vcf" download>📥 Save Contact</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+Powered by TeraSyncTech 🚀
+</div>
+
+</body>
+</html>
