@@ -4,50 +4,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact | Azad Prime Medico</title>
+<title>Azad Prime Medico | Order Medicines Online</title>
+<meta name="description" content="Order medicines online via WhatsApp. Fast delivery in Ranchi.">
+
 <link rel="icon" href="logo.png">
 
 <style>
-body {font-family:Segoe UI;background:#eef6ff;margin:0;}
-.nav {background:white;padding:10px;text-align:center;}
-.nav a {margin:10px;color:#0072ff;text-decoration:none;font-weight:bold;}
-.section {max-width:500px;margin:auto;padding:20px;}
-.card {background:white;padding:20px;border-radius:15px;margin-top:15px;}
-.btn {padding:12px 20px;border-radius:30px;background:#0072ff;color:white;text-decoration:none;display:inline-block;margin-top:10px;}
+body {margin:0;font-family:Segoe UI;background:#eef6ff;}
+
+.nav {
+position:fixed;top:0;width:100%;
+background:white;padding:12px;text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;
+}
+.nav a {margin:10px;text-decoration:none;color:#0072ff;font-weight:bold;}
+
+.hero {
+height:90vh;
+background:url('https://images.unsplash.com/photo-1580281658629-1dc0d4cfae2b?w=1600') center/cover;
+display:flex;align-items:center;justify-content:center;
+text-align:center;color:white;position:relative;
+}
+.hero::after {
+content:"";position:absolute;width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+}
+.hero-content {position:relative;z-index:2;}
+
+.btn {
+padding:12px 20px;border-radius:30px;
+background:#25D366;color:white;text-decoration:none;
+margin:8px;display:inline-block;font-weight:bold;
+}
+
+.section {padding:40px 20px;max-width:500px;margin:auto;}
+.card {
+background:white;padding:20px;border-radius:15px;
+margin-top:15px;text-align:center;
+}
+
+.products {display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.product {
+background:white;padding:10px;border-radius:10px;
+text-align:center;
+}
+.product img {width:100%;height:100px;object-fit:cover;border-radius:10px;}
+
+.whatsapp-float {
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;
+padding:14px 18px;border-radius:50px;
+text-decoration:none;font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
 </style>
 </head>
 
 <body>
 
 <div class="nav">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="contact.html">Contact</a>
+<a href="#">Home</a>
+<a href="#products">Medicines</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="hero">
+<div class="hero-content">
+<img src="logo.png" width="100">
+<h1>Azad Prime Medico 💊</h1>
+<p>Fast Medicine Delivery in Ranchi</p>
+
+<a class="btn" href="https://wa.me/917633801161?text=Hi%20I%20want%20to%20order%20medicine">
+Order on WhatsApp
+</a>
+</div>
 </div>
 
 <div class="section">
-
 <div class="card">
-<h2>Contact</h2>
+<h2>How It Works</h2>
+<p>1. Send prescription on WhatsApp 📄</p>
+<p>2. We confirm medicines ✅</p>
+<p>3. Get delivery or pickup 🚚</p>
+</div>
+</div>
 
+<div class="section" id="products">
+<h2 style="text-align:center;">Popular Medicines</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://via.placeholder.com/150">
+<p>Paracetamol</p>
+<p>₹50</p>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/150">
+<p>Cough Syrup</p>
+<p>₹90</p>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/150">
+<p>Vitamin Tablets</p>
+<p>₹150</p>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/150">
+<p>Insulin Injection</p>
+<p>₹450</p>
+</div>
+
+</div>
+</div>
+
+<div class="section" id="contact">
+<div class="card">
+<h2>Contact Us</h2>
 <p>📞 7633801161</p>
-<p>📧 anand@azadprimemedico.com</p>
+<p>📍 Ranchi</p>
 
-<a class="btn" href="https://wa.me/917633801161">WhatsApp</a>
-<a class="btn" href="contact.vcf" download>Save Contact</a>
-
+<a class="btn" href="https://wa.me/917633801161">Chat on WhatsApp</a>
+</div>
 </div>
 
-<div class="card">
-<h2>Location</h2>
-
-<iframe 
-src="https://maps.google.com/maps?q=Ranchi&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="200" style="border:0;"></iframe>
-
-</div>
-
-</div>
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp-float" href="https://wa.me/917633801161?text=Hi%20I%20want%20to%20order%20medicine">
+WhatsApp
+</a>
 
 </body>
 </html>
