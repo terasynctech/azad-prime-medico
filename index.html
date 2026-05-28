@@ -1,7 +1,8 @@
 <!-- =========================================
 AZAD PRIME MEDICO
-PREMIUM MEDICAL STORE DEMO
-FULL UPDATED VERSION
+FULL PREMIUM E-COMMERCE DEMO
+FINAL UPDATED VERSION
+Powered By TeraSyncTech
 ========================================= -->
 
 <!DOCTYPE html>
@@ -19,12 +20,16 @@ content="Order medicines online with prescription upload, AI support & WhatsApp 
 
 <link rel="icon" href="logo.png">
 
+<!-- OCR LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
@@ -60,7 +65,7 @@ font-size:14px;
 /* HERO */
 
 .hero{
-height:90vh;
+height:100vh;
 background:url('https://images.unsplash.com/photo-1580281658629-1dc0d4cfae2b?w=1600') center/cover;
 display:flex;
 align-items:center;
@@ -75,7 +80,7 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.65);
 }
 
 .hero-content{
@@ -85,17 +90,21 @@ padding:20px;
 }
 
 .hero img{
-width:100px;
+width:110px;
 margin-bottom:15px;
+border-radius:20px;
+background:white;
+padding:8px;
 }
 
 .hero h1{
-font-size:38px;
+font-size:42px;
 }
 
 .hero p{
 margin-top:12px;
 font-size:18px;
+line-height:1.7;
 }
 
 /* BUTTON */
@@ -110,6 +119,8 @@ color:white;
 font-weight:bold;
 text-decoration:none;
 transition:0.3s;
+border:none;
+cursor:pointer;
 }
 
 .btn:hover{
@@ -119,14 +130,14 @@ transform:scale(1.05);
 /* SECTION */
 
 .section{
-padding:40px 20px;
+padding:45px 20px;
 max-width:1200px;
 margin:auto;
 }
 
 .section-title{
 text-align:center;
-font-size:30px;
+font-size:32px;
 margin-bottom:25px;
 color:#0072ff;
 }
@@ -135,8 +146,8 @@ color:#0072ff;
 
 .card{
 background:white;
-padding:20px;
-border-radius:18px;
+padding:22px;
+border-radius:20px;
 margin-top:20px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
@@ -145,7 +156,7 @@ box-shadow:0 5px 20px rgba(0,0,0,0.08);
 
 .search-box{
 width:100%;
-padding:14px;
+padding:15px;
 border-radius:15px;
 border:none;
 font-size:16px;
@@ -171,24 +182,24 @@ transition:0.3s;
 }
 
 .product:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 }
 
 .product img{
 width:100%;
-height:170px;
+height:180px;
 object-fit:cover;
 border-radius:12px;
 }
 
 .product h3{
-margin-top:10px;
+margin-top:12px;
 font-size:18px;
 }
 
 .price{
 color:#0072ff;
-font-size:20px;
+font-size:22px;
 font-weight:bold;
 margin-top:8px;
 }
@@ -208,6 +219,34 @@ border-radius:15px;
 text-align:center;
 font-weight:bold;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.category:hover{
+transform:scale(1.03);
+background:#0072ff;
+color:white;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature-box{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.feature-box h3{
+margin-top:12px;
+color:#0072ff;
 }
 
 /* CART */
@@ -312,6 +351,7 @@ padding:20px;
 border-radius:18px;
 text-align:center;
 box-shadow:0 4px 15px rgba(0,0,0,0.08);
+font-size:18px;
 }
 
 /* FOOTER */
@@ -319,7 +359,7 @@ box-shadow:0 4px 15px rgba(0,0,0,0.08);
 .footer{
 background:#0072ff;
 color:white;
-padding:30px 20px;
+padding:35px 20px;
 text-align:center;
 margin-top:40px;
 }
@@ -342,6 +382,20 @@ z-index:999;
 .bottom-nav a{
 text-decoration:none;
 font-size:24px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:32px;
+}
+
+.section-title{
+font-size:26px;
+}
+
 }
 
 </style>
@@ -371,17 +425,64 @@ font-size:24px;
 
 <h1>Azad Prime Medico 💊</h1>
 
-<p>Smart Online Pharmacy in Ranchi</p>
+<p>
+Smart Online Pharmacy in Ranchi <br>
+Fast Delivery • Prescription Upload • WhatsApp Ordering
+</p>
 
 <a class="btn"
 href="https://wa.me/917633801161?text=Hi I want to order medicine">
-Order Medicines
+🛒 Order Medicines
 </a>
 
 <a class="btn"
 onclick="toggleChat()">
-AI Support
+🤖 AI Support
 </a>
+
+<a class="btn"
+href="sample-prescription.pdf"
+download>
+📄 Download Sample Prescription
+</a>
+
+</div>
+
+</div>
+
+<!-- FEATURES -->
+
+<div class="section">
+
+<h2 class="section-title">
+🚀 Premium Features
+</h2>
+
+<div class="features">
+
+<div class="feature-box">
+<h2>📄</h2>
+<h3>Prescription Upload</h3>
+<p>Customers can upload doctor prescription directly.</p>
+</div>
+
+<div class="feature-box">
+<h2>🛒</h2>
+<h3>Medicine Cart</h3>
+<p>Add medicines and order instantly on WhatsApp.</p>
+</div>
+
+<div class="feature-box">
+<h2>🤖</h2>
+<h3>AI Chat Assistant</h3>
+<p>Automated support for customer queries.</p>
+</div>
+
+<div class="feature-box">
+<h2>🚚</h2>
+<h3>Home Delivery</h3>
+<p>Medicine delivery available across Ranchi.</p>
+</div>
 
 </div>
 
@@ -516,7 +617,7 @@ Add to Cart
 </h2>
 
 <p style="margin-top:10px;">
-Upload prescription image or PDF
+Upload prescription image or PDF and send instantly on WhatsApp
 </p>
 
 <br>
@@ -528,7 +629,7 @@ id="prescription">
 
 <button class="btn"
 onclick="uploadPrescription()">
-Send Prescription
+📤 Send Prescription
 </button>
 
 </div>
@@ -546,7 +647,7 @@ Send Prescription
 </h2>
 
 <p style="margin-top:10px;">
-Upload business card to extract contact
+Upload business card to extract contact details
 </p>
 
 <br>
@@ -580,7 +681,7 @@ class="ocr-result">
 <div class="testimonial"
 id="testimonialBox">
 
-“Best pharmacy website solution by TeraSyncTech.”
+“Best pharmacy ecommerce demo by TeraSyncTech.”
 
 </div>
 
@@ -615,7 +716,7 @@ id="contact">
 
 <a class="btn"
 href="https://wa.me/917633801161">
-WhatsApp
+💬 WhatsApp
 </a>
 
 </div>
@@ -692,10 +793,6 @@ Send
 
 </div>
 
-<!-- OCR LIBRARY -->
-
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-
 <script>
 
 /* CART */
@@ -712,11 +809,19 @@ total += price;
 document.getElementById("cartCount").innerHTML =
 cart.length;
 
-alert(name + " added to cart");
+alert(name + " added to cart ✅");
 
 }
 
 function checkoutWhatsApp(){
+
+if(cart.length===0){
+
+alert("Cart is empty");
+
+return;
+
+}
 
 let message =
 "🛒 Medicine Order:%0A%0A";
@@ -813,6 +918,11 @@ reply =
 "We accept UPI, GPay & Cash 💳";
 }
 
+else if(text.toLowerCase().includes("vitamin")){
+reply =
+"Becosules vitamins are available 💊";
+}
+
 setTimeout(()=>{
 
 messages.innerHTML +=
@@ -842,7 +952,13 @@ return;
 
 }
 
-alert("Prescription uploaded successfully ✅");
+let message =
+"Hi Azad Prime Medico, I want to order medicines with prescription.";
+
+window.open(
+"https://wa.me/917633801161?text=" + encodeURIComponent(message),
+"_blank"
+);
 
 }
 
@@ -890,11 +1006,13 @@ ${text.replace(/\n/g,"<br>")}
 
 const testimonials = [
 
-"“Best pharmacy website solution by TeraSyncTech.”",
+"“Best pharmacy ecommerce demo by TeraSyncTech.”",
 
-"“Very professional medical ecommerce demo.”",
+"“Professional medical website solution.”",
 
-"“WhatsApp ordering system is amazing.”"
+"“WhatsApp ordering system is amazing.”",
+
+"“Easy prescription upload and medicine ordering.”"
 
 ];
 
