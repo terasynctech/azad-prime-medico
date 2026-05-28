@@ -1,140 +1,919 @@
+<!-- =========================================
+AZAD PRIME MEDICO
+PREMIUM MEDICAL STORE DEMO
+FULL UPDATED VERSION
+========================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Azad Prime Medico | Order Medicines Online</title>
-<meta name="description" content="Order medicines online via WhatsApp. Fast delivery in Ranchi.">
+<title>Azad Prime Medico | Smart Pharmacy</title>
+
+<meta name="description"
+content="Order medicines online with prescription upload, AI support & WhatsApp ordering.">
 
 <link rel="icon" href="logo.png">
 
 <style>
-body {margin:0;font-family:Segoe UI;background:#eef6ff;}
 
-.nav {
-position:fixed;top:0;width:100%;
-background:white;padding:12px;text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
-.nav a {margin:10px;text-decoration:none;color:#0072ff;font-weight:bold;}
 
-.hero {
+body{
+font-family:'Segoe UI',sans-serif;
+background:#eef6ff;
+color:#111;
+padding-bottom:90px;
+}
+
+/* NAVBAR */
+
+.nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+padding:14px;
+display:flex;
+justify-content:space-around;
+align-items:center;
+box-shadow:0 2px 12px rgba(0,0,0,0.08);
+z-index:999;
+}
+
+.nav a{
+text-decoration:none;
+color:#0072ff;
+font-weight:bold;
+font-size:14px;
+}
+
+/* HERO */
+
+.hero{
 height:90vh;
 background:url('https://images.unsplash.com/photo-1580281658629-1dc0d4cfae2b?w=1600') center/cover;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:white;position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+text-align:center;
+color:white;
 }
-.hero::after {
-content:"";position:absolute;width:100%;height:100%;
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.6);
 }
-.hero-content {position:relative;z-index:2;}
 
-.btn {
-padding:12px 20px;border-radius:30px;
-background:#25D366;color:white;text-decoration:none;
-margin:8px;display:inline-block;font-weight:bold;
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
 }
 
-.section {padding:40px 20px;max-width:500px;margin:auto;}
-.card {
-background:white;padding:20px;border-radius:15px;
-margin-top:15px;text-align:center;
+.hero img{
+width:100px;
+margin-bottom:15px;
 }
 
-.products {display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.product {
-background:white;padding:10px;border-radius:10px;
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+margin-top:12px;
+font-size:18px;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+padding:13px 22px;
+margin:8px;
+border-radius:40px;
+background:linear-gradient(90deg,#0072ff,#00bfff);
+color:white;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* SECTION */
+
+.section{
+padding:40px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
 text-align:center;
+font-size:30px;
+margin-bottom:25px;
+color:#0072ff;
 }
-.product img {width:100%;height:100px;object-fit:cover;border-radius:10px;}
 
-.whatsapp-float {
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;
-padding:14px 18px;border-radius:50px;
-text-decoration:none;font-weight:bold;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+/* CARD */
+
+.card{
+background:white;
+padding:20px;
+border-radius:18px;
+margin-top:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
+
+/* SEARCH */
+
+.search-box{
+width:100%;
+padding:14px;
+border-radius:15px;
+border:none;
+font-size:16px;
+box-shadow:0 3px 12px rgba(0,0,0,0.1);
+margin-bottom:25px;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.product{
+background:white;
+padding:15px;
+border-radius:18px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+}
+
+.product:hover{
+transform:translateY(-5px);
+}
+
+.product img{
+width:100%;
+height:170px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.product h3{
+margin-top:10px;
+font-size:18px;
+}
+
+.price{
+color:#0072ff;
+font-size:20px;
+font-weight:bold;
+margin-top:8px;
+}
+
+/* CATEGORY */
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.category{
+background:white;
+padding:20px;
+border-radius:15px;
+text-align:center;
+font-weight:bold;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* CART */
+
+.cart-box{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#0072ff;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+font-weight:bold;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
+z-index:999;
+cursor:pointer;
+}
+
+/* CHATBOT */
+
+.chatbot{
+position:fixed;
+bottom:90px;
+left:20px;
+width:320px;
+background:white;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+overflow:hidden;
+display:none;
+z-index:9999;
+}
+
+.chat-header{
+background:#0072ff;
+color:white;
+padding:15px;
+font-weight:bold;
+}
+
+.chat-messages{
+height:250px;
+overflow-y:auto;
+padding:12px;
+background:#f5fbff;
+}
+
+.bot{
+background:#dff1ff;
+padding:10px;
+border-radius:12px;
+margin:8px 0;
+}
+
+.user{
+background:#0072ff;
+color:white;
+padding:10px;
+border-radius:12px;
+margin:8px 0;
+text-align:right;
+}
+
+.chat-input{
+display:flex;
+padding:10px;
+background:white;
+}
+
+.chat-input input{
+flex:1;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.chat-input button{
+margin-left:8px;
+padding:12px 16px;
+border:none;
+background:#0072ff;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* OCR */
+
+.ocr-result{
+margin-top:15px;
+background:#eef7ff;
+padding:15px;
+border-radius:12px;
+display:none;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:white;
+padding:20px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+
+.footer{
+background:#0072ff;
+color:white;
+padding:30px 20px;
+text-align:center;
+margin-top:40px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:12px;
+box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+z-index:999;
+}
+
+.bottom-nav a{
+text-decoration:none;
+font-size:24px;
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- NAV -->
+
 <div class="nav">
+
 <a href="#">Home</a>
 <a href="#products">Medicines</a>
+<a href="#categories">Categories</a>
 <a href="#contact">Contact</a>
+
 </div>
+
+<!-- HERO -->
 
 <div class="hero">
-<div class="hero-content">
-<img src="logo.png" width="100">
-<h1>Azad Prime Medico 💊</h1>
-<p>Fast Medicine Delivery in Ranchi</p>
 
-<a class="btn" href="https://wa.me/917633801161?text=Hi%20I%20want%20to%20order%20medicine">
-Order on WhatsApp
+<div class="hero-content">
+
+<img src="logo.png">
+
+<h1>Azad Prime Medico 💊</h1>
+
+<p>Smart Online Pharmacy in Ranchi</p>
+
+<a class="btn"
+href="https://wa.me/917633801161?text=Hi I want to order medicine">
+Order Medicines
 </a>
+
+<a class="btn"
+onclick="toggleChat()">
+AI Support
+</a>
+
 </div>
+
 </div>
+
+<!-- SEARCH -->
 
 <div class="section">
+
+<input type="text"
+class="search-box"
+id="searchInput"
+placeholder="🔍 Search medicines..."
+onkeyup="searchMedicine()">
+
+</div>
+
+<!-- CATEGORIES -->
+
+<div class="section"
+id="categories">
+
+<h2 class="section-title">
+💊 Categories
+</h2>
+
+<div class="categories">
+
+<div class="category">Fever</div>
+<div class="category">Diabetes</div>
+<div class="category">BP Care</div>
+<div class="category">Baby Care</div>
+<div class="category">Personal Care</div>
+<div class="category">Vitamins</div>
+
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<div class="section"
+id="products">
+
+<h2 class="section-title">
+🔥 Popular Medicines
+</h2>
+
+<div class="products"
+id="productList">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=500">
+
+<h3>Dolo 650</h3>
+
+<p>Fever & Pain Relief</p>
+
+<div class="price">₹35</div>
+
+<button class="btn"
+onclick="addToCart('Dolo 650',35)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=500">
+
+<h3>Benadryl Syrup</h3>
+
+<p>Cough Relief</p>
+
+<div class="price">₹120</div>
+
+<button class="btn"
+onclick="addToCart('Benadryl Syrup',120)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500">
+
+<h3>Becosules</h3>
+
+<p>Vitamin Capsules</p>
+
+<div class="price">₹95</div>
+
+<button class="btn"
+onclick="addToCart('Becosules',95)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?w=500">
+
+<h3>Digene</h3>
+
+<p>Acidity Relief</p>
+
+<div class="price">₹80</div>
+
+<button class="btn"
+onclick="addToCart('Digene',80)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PRESCRIPTION -->
+
+<div class="section">
+
 <div class="card">
-<h2>How It Works</h2>
-<p>1. Send prescription on WhatsApp 📄</p>
-<p>2. We confirm medicines ✅</p>
-<p>3. Get delivery or pickup 🚚</p>
-</div>
-</div>
 
-<div class="section" id="products">
-<h2 style="text-align:center;">Popular Medicines</h2>
+<h2>
+📄 Upload Prescription
+</h2>
 
-<div class="products">
+<p style="margin-top:10px;">
+Upload prescription image or PDF
+</p>
 
-<div class="product">
-<img src="https://via.placeholder.com/150">
-<p>Paracetamol</p>
-<p>₹50</p>
-</div>
+<br>
 
-<div class="product">
-<img src="https://via.placeholder.com/150">
-<p>Cough Syrup</p>
-<p>₹90</p>
-</div>
+<input type="file"
+id="prescription">
 
-<div class="product">
-<img src="https://via.placeholder.com/150">
-<p>Vitamin Tablets</p>
-<p>₹150</p>
-</div>
+<br><br>
 
-<div class="product">
-<img src="https://via.placeholder.com/150">
-<p>Insulin Injection</p>
-<p>₹450</p>
+<button class="btn"
+onclick="uploadPrescription()">
+Send Prescription
+</button>
+
 </div>
 
 </div>
-</div>
 
-<div class="section" id="contact">
+<!-- OCR -->
+
+<div class="section">
+
 <div class="card">
-<h2>Contact Us</h2>
-<p>📞 7633801161</p>
-<p>📍 Ranchi</p>
 
-<a class="btn" href="https://wa.me/917633801161">Chat on WhatsApp</a>
-</div>
+<h2>
+📇 Scan Visiting Card
+</h2>
+
+<p style="margin-top:10px;">
+Upload business card to extract contact
+</p>
+
+<br>
+
+<input type="file"
+id="cardImage">
+
+<br><br>
+
+<button class="btn"
+onclick="scanCard()">
+📸 Scan Card
+</button>
+
+<div id="ocrResult"
+class="ocr-result">
 </div>
 
-<!-- WhatsApp Floating Button -->
-<a class="whatsapp-float" href="https://wa.me/917633801161?text=Hi%20I%20want%20to%20order%20medicine">
+</div>
+
+</div>
+
+<!-- TESTIMONIAL -->
+
+<div class="section">
+
+<h2 class="section-title">
+⭐ Testimonials
+</h2>
+
+<div class="testimonial"
+id="testimonialBox">
+
+“Best pharmacy website solution by TeraSyncTech.”
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section"
+id="contact">
+
+<div class="card">
+
+<h2>
+📞 Contact Us
+</h2>
+
+<br>
+
+<p>
+📍 Ranchi, Jharkhand
+</p>
+
+<p>
+📞 +91 7633801161
+</p>
+
+<p>
+🌐 www.terasynctech.com
+</p>
+
+<br>
+
+<a class="btn"
+href="https://wa.me/917633801161">
 WhatsApp
 </a>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<h2>
+Azad Prime Medico
+</h2>
+
+<p style="margin-top:10px;">
+Powered by TeraSyncTech 🚀
+</p>
+
+</div>
+
+<!-- CART -->
+
+<div class="cart-box"
+onclick="checkoutWhatsApp()">
+
+🛒 Cart:
+<span id="cartCount">
+0
+</span>
+
+</div>
+
+<!-- CHATBOT -->
+
+<div class="chatbot"
+id="chatbot">
+
+<div class="chat-header">
+🤖 AI Pharmacy Assistant
+</div>
+
+<div class="chat-messages"
+id="chatMessages">
+
+<div class="bot">
+Hello 👋 Welcome to Azad Prime Medico.
+How can we help you today?
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input type="text"
+id="chatInput"
+placeholder="Type message...">
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom-nav">
+
+<a href="#">🏠</a>
+<a href="#products">💊</a>
+<a href="https://wa.me/917633801161">💬</a>
+<a href="#contact">📞</a>
+
+</div>
+
+<!-- OCR LIBRARY -->
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<script>
+
+/* CART */
+
+let cart = [];
+let total = 0;
+
+function addToCart(name,price){
+
+cart.push(name + " - ₹" + price);
+
+total += price;
+
+document.getElementById("cartCount").innerHTML =
+cart.length;
+
+alert(name + " added to cart");
+
+}
+
+function checkoutWhatsApp(){
+
+let message =
+"🛒 Medicine Order:%0A%0A";
+
+cart.forEach(item=>{
+message += "• " + item + "%0A";
+});
+
+message += "%0A💰 Total: ₹" + total;
+
+window.open(
+"https://wa.me/917633801161?text=" + message,
+"_blank"
+);
+
+}
+
+/* SEARCH */
+
+function searchMedicine(){
+
+let input =
+document.getElementById("searchInput").value.toLowerCase();
+
+let products =
+document.querySelectorAll(".product");
+
+products.forEach(product=>{
+
+let text =
+product.innerText.toLowerCase();
+
+if(text.includes(input)){
+product.style.display = "block";
+}else{
+product.style.display = "none";
+}
+
+});
+
+}
+
+/* CHATBOT */
+
+function toggleChat(){
+
+let bot =
+document.getElementById("chatbot");
+
+if(bot.style.display==="block"){
+bot.style.display="none";
+}else{
+bot.style.display="block";
+}
+
+}
+
+function sendMessage(){
+
+let input =
+document.getElementById("chatInput");
+
+let text =
+input.value;
+
+if(text.trim()==="") return;
+
+let messages =
+document.getElementById("chatMessages");
+
+messages.innerHTML +=
+`<div class="user">${text}</div>`;
+
+let reply =
+"Please contact our pharmacy support.";
+
+if(text.toLowerCase().includes("fever")){
+reply =
+"We recommend Dolo 650 for fever relief 💊";
+}
+
+else if(text.toLowerCase().includes("cough")){
+reply =
+"Benadryl syrup is available for cough relief 🤧";
+}
+
+else if(text.toLowerCase().includes("delivery")){
+reply =
+"Home delivery available across Ranchi 🚚";
+}
+
+else if(text.toLowerCase().includes("payment")){
+reply =
+"We accept UPI, GPay & Cash 💳";
+}
+
+setTimeout(()=>{
+
+messages.innerHTML +=
+`<div class="bot">${reply}</div>`;
+
+messages.scrollTop =
+messages.scrollHeight;
+
+},500);
+
+input.value="";
+
+}
+
+/* PRESCRIPTION */
+
+function uploadPrescription(){
+
+let file =
+document.getElementById("prescription").files[0];
+
+if(!file){
+
+alert("Please upload prescription");
+
+return;
+
+}
+
+alert("Prescription uploaded successfully ✅");
+
+}
+
+/* OCR */
+
+function scanCard(){
+
+const file =
+document.getElementById("cardImage").files[0];
+
+if(!file){
+
+alert("Please upload visiting card");
+
+return;
+
+}
+
+document.getElementById("ocrResult").style.display =
+"block";
+
+document.getElementById("ocrResult").innerHTML =
+"⏳ Scanning...";
+
+Tesseract.recognize(
+file,
+'eng'
+).then(({data:{text}})=>{
+
+document.getElementById("ocrResult").innerHTML =
+
+`
+<h3>✅ Extracted Text</h3>
+
+<br>
+
+${text.replace(/\n/g,"<br>")}
+`;
+
+});
+
+}
+
+/* TESTIMONIAL */
+
+const testimonials = [
+
+"“Best pharmacy website solution by TeraSyncTech.”",
+
+"“Very professional medical ecommerce demo.”",
+
+"“WhatsApp ordering system is amazing.”"
+
+];
+
+let testi = 0;
+
+setInterval(()=>{
+
+testi++;
+
+if(testi >= testimonials.length){
+testi = 0;
+}
+
+document.getElementById("testimonialBox").innerHTML =
+testimonials[testi];
+
+},3000);
+
+</script>
 
 </body>
 </html>
